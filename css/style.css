@@ -1,0 +1,914 @@
+/* 
+    1- Common Styles
+    2- General Styles
+    3- Sections
+        3.1 Header Section
+        3.2 Home Section
+        3.3 About Section
+        3.4 Portfolio Section
+        3.5 Offer Section
+        3.6 services Section
+        3.7 Number Section
+        3.8 Prices Section
+        3.9 Testimonial Section
+        3.10 Team Section
+        3.11 Blog Section
+        3.12 Contact Section
+        3.13 footer Section
+*/
+
+/* ==============================
+    1- Common Styles
+================================*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.clear {
+    clear: both;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(28,29,33,.8);
+}
+
+/* ==============================
+    2- General Styles
+================================*/
+
+body {
+    font-family: 'Varela Round', sans-serif;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: montserrat, sans-serif;
+}
+
+button {
+    font-family: inherit;
+}
+
+.hover-opacity {
+    transition: opacity .5s;
+    cursor: pointer;
+}
+
+.hover-opacity:hover {
+    opacity: .8;
+}
+
+/*ltr effect*/
+/*ttb effect*/
+.ltr-effect,
+.ttb-effect{
+    position: relative;
+}
+
+.ltr-effect:before,
+.ttb-effect:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    background-color: #333;
+    z-index: -1;
+    transition: .3s;
+}
+
+.ltr-effect:before {
+    height: 100%;
+    width: 0;
+}
+
+.ttb-effect:before {
+    height: 0;
+    width: 100%;
+}
+
+.ttb-effect:hover:before {
+    height: 100%;
+}
+
+.ltr-effect:hover:before {
+    width: 100%;
+}
+
+
+/*overlay effect*/
+.overlay-effect {
+     position: relative;
+}
+
+.overlay-effect:hover:before {
+     opacity: .7;
+}
+
+.overlay-effect:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* section */
+.section {
+    padding: 120px 0;
+}
+
+.section-header {
+    text-align: center;
+}
+
+.section-header .section-title {
+    text-transform: capitalize;
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.section-header .line {
+    display: block;
+    height: 4px;
+    width: 40px;
+    background-color: #6195ff;
+    margin: 0 auto 70px;
+}
+
+/* ==============================
+    3.1 Header Section
+================================*/
+
+.header {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    background: rgba(0,0,0,.7);
+}
+
+.header .logo {
+    width: 40%;
+    float: left;
+}
+
+.header .logo img {
+    width: 20%;
+    margin-top: 15px;
+}
+
+.header .nav {
+    width: 60%;
+    float: left;
+    text-align: right;
+}
+
+.header .nav > li {
+    display: inline-block;
+}
+
+.header .nav > li > a {
+    display: block;
+    padding: 25px 10px;
+    color: #fff;
+    font-size: 15px;
+}
+
+.header .nav > li > a:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 3px;
+    margin-top: 2px;
+    background-color: #6195ff;
+    transition: .5s;
+}
+
+.header .nav > li > a:hover:after,
+.header .nav > li > a.active:after {
+    width: 100%;
+}
+
+.header .nav .dropdown {
+    position: relative;
+}
+
+.header .nav .dropdown-menu {
+    position: absolute;
+    top: 90%;
+    left: 0;
+    min-width: 180px;
+    background-color: #6195ff;
+    transform: translate(-30%, 40%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform .3s, opacity .3s; 
+}
+
+.header .nav .dropdown-menu a {
+    color: #fff;
+    padding: 10px 15px;
+    text-align: left;
+    display: block;
+}
+
+.header .nav .dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-30%, 0%);
+}
+
+
+
+/* ==============================
+    3.2 Home Section
+================================*/
+.home {
+    height: 100vh;
+    background-image: url(../images/background/background1.webp);
+    background-position: center;
+    background-size: cover;
+    position: relative
+}
+
+.home-content {
+    display: inline-block;
+    position: absolute;
+    width: 60%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.home .title {
+    color: #fff;
+    font-size: 3.35em;
+    text-transform: uppercase;
+}
+
+.home-desc {
+    margin: 20px 0;
+    color: #fff;
+    line-height: 1.5;
+}
+
+.home .btn {
+/*    width: 160px;*/
+    padding: 15px 40px;
+    border-radius: 3px;
+    border: 0;
+    cursor: pointer;
+    font-size: 17px;
+    font-size: 16px;
+    background-color: #fff;
+    margin-top: 10px;
+}
+
+.home .btn-learn {
+    margin-left: 6px;
+    background-color: #6195ff;
+    color: #fff;
+    font-weight: 100;
+}
+
+/* ==============================
+    3.3 About Section
+================================*/
+.about-item {
+    float: left;
+    width: 30%;
+    text-align: center;
+    border: 1px solid #eee;
+    padding: 50px 30px;
+    margin: 0 1.53%;
+}
+
+.about-item:hover .about-item-title {
+    color: #fff;
+}
+
+.about-item .icon {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #6195ff;
+}
+
+.about-item-title {
+    font-size: 21px;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+    transition: color .3s;
+}
+
+.about-item-desc {
+    color: #868f9b;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.about-item-link {
+    color: #6195ff;
+    text-transform: capitalize;
+}
+
+/* ==============================
+    3.4 Portfolio Section
+================================*/
+.portfolio-section {
+    background-color: #fafafa;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee; 
+}
+
+.portfolio-item {
+    float: left;
+    width: 33.333%;
+    padding: 20px;
+    position: relative
+}
+
+.portfolio-item img {
+    width: 100%;
+}
+
+.portfolio-item .layer-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+}
+
+.portfolio-item .layer-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.portfolio-item .layer-category {
+    color: #6195ff;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.portfolio-item .layer-title {
+    color: #fff;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 21px;
+    margin-bottom: 15px;
+    transform: translate(0,20px);
+    visibility: hidden;
+    opacity: 0;
+    transition: transform 0.2s ;
+}
+
+.portfolio-item a {
+    color: #fff;
+    background: #6195ff;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    display: inline-block;
+    line-height: 50px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ;
+}
+
+.portfolio-item:hover .layer-category,
+.portfolio-item:hover .layer-title,
+.portfolio-item:hover a {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0,0);
+}
+/* ==============================
+    3.5 Offer Section
+================================*/
+.offer-content {
+    position: relative;
+    
+}
+
+.offer-item {
+    float: left;
+    width: 30%;
+    margin: 0 1.53%;
+    padding: 40px 30px 50px 70px;
+    border: 1px solid #eee;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.offer-item:hover .offer-item-title {
+    color: #fff;
+    transition: .3;
+}
+
+.offer-item i {
+    font-size: 29px;
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    color: #6195ff;
+}
+
+.offer-item-title {
+    margin-bottom: 20px;
+    font-size: 21px;
+}
+
+.offer-item-desc {
+    line-height: 1.6;
+    color: #868f9b;
+}
+
+/* ==============================
+    3.6 services Section
+================================*/
+.services-section {
+    background-color: #fafafa;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd; 
+}
+
+.services-item {
+    float: left;
+    width: 50%;
+}
+
+.services-section .section-header {
+    text-align: left;
+    margin-bottom: 60px;
+}
+
+.services-section .line {
+    margin: 0;
+}
+
+.services-item-desc {
+    color: #868f9b;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 16px;
+    padding-right: 40px;
+}
+
+.services-list li {
+    color: #868f9b;
+    margin-bottom: 10px;
+}
+
+.services-list li i {
+    color: #6195ff;
+    border: 1px solid #6195ff;
+    padding: 6px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
+
+.services-item-img img {
+    width: 100%;
+}
+
+.services-bolits {
+    overflow: hidden;
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+.services-bolits li {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background: #bbb;
+    display: inline-block;
+    transition: .3s;
+}
+
+.services-bolits li.active,
+.services-bolits li:hover{
+    background: #6195ff;
+    width: 20px;
+}
+
+/* ==============================
+    3.7 Number Section
+================================*/
+.number-section {
+    position: relative;
+    background-image: url(../images/background/background2.webp);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 300px;
+}
+
+.number-section .overlay {
+    padding: 90px 0;
+}
+
+.number-item {
+    width: 25%;
+    float: left;
+    text-align: center;
+}
+
+.number-section i {
+    font-size: 36px;
+    color: #6195ff;
+    margin-bottom: 15px;
+}
+
+.number-title {
+    font-size: 37px;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.number-desc {
+    color: #fff;
+    font-size: 16px;
+}
+
+/* ==============================
+    3.8 Prices Section
+================================*/
+.price-item {
+    width: 30%;
+    margin: 0 1.53%;
+    border: 1px solid #ddd;
+    padding: 50px;
+    text-align: center;
+    color: #868f9b;
+    display: inline-block;
+}
+
+.price-item-plan {
+    margin-bottom: 20px;
+    display: block;
+}
+
+.price-item-price {
+    border: 2px solid #6195ff;
+    width: 140px;
+    height: 140px;
+    margin: auto;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    padding-top: 30px;
+    color: #10161a;
+}
+
+.price-item:hover .price-item-price {
+    color: #fff;
+    transition: color .3s;
+}
+
+
+.price-item-dollar {
+    font-size: 45px;
+}
+
+.price-item-duration {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.price-item-desc li {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.price-btn {
+    margin-top: 20px;
+    background: none;
+    border: 2px solid #6195ff;
+    color: #6195ff;
+    padding: 12px 40px;
+    font-size: 16px;
+}
+
+/* ==============================
+    3.9 Testimonial Section
+================================*/
+.testimon-section {
+    position: relative;
+    background-image: url(../images/background/background3.webp);
+    background-attachment: fixed;
+    background-size: cover;
+    height: 400px;
+}
+
+.testimon-section .overlay {
+    padding-top: 120px;
+}
+
+.testimon-item {
+    width: 50%;
+    float: left;
+    display: inline-block;
+    padding: 0 40px;
+}
+
+.testimon-item .toplayer {
+    position: relative;
+    padding: 10px 40px 40px 90px;
+    color: #fff;
+}
+
+.testimon-item .toplayer img {
+    position: absolute;
+    left: 0;
+    top: 0px;
+    border-radius: 50%;
+}
+
+.testimon-job {
+    color: #6195ff;
+}
+
+.testimon-desc {
+    color: #fff;
+    font-size: 17px;
+}
+
+/* ==============================
+    3.10 Team Section
+================================*/
+.team-section {
+    text-align: center;
+}
+
+.team-item {
+    width: 30%;
+    margin: 0 1.53%;
+    float: left;
+    display: inline-block;
+    background: #f4f4f4;
+    padding: 40px 20px 60px;
+    position: relative;
+}
+
+.team-item.ttb-effect {
+    z-index: 1;
+}
+
+.team-item .img {
+    width: 100%;
+    position: relative;
+    height: 309px;
+}
+
+.team-social {
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+}
+
+.team-item:hover .team-social {
+    opacity: 1;
+    visibility: visible;
+}
+
+.team-social i {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: #6195ff;
+    color: #fff;
+    line-height: 50px;
+    margin-left: auto;
+}
+
+.team-item img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.team-member {
+    margin-top: 15px;
+    font-size: 21px;
+}
+
+.team-item:hover .team-member {
+    color: #fff;
+}
+
+.team-job {
+    color: #868f9b;
+    font-size: 15px;
+    margin-top: 15px;
+    display: block;
+}
+
+.team-item:hover .team-job {
+    color: #6195ff;
+}
+
+/* ==============================
+    3.11 Blog Section
+================================*/
+
+.blog-section {
+    background: #fafafa;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.blog-item {
+    width: 30%;
+    margin: 0 1.53%;
+    float: left;
+    display: inline-block;
+    background: #fff;
+}
+
+.blog-img img {
+    width: 100%;
+}
+
+.blog-data {
+    padding: 20px;
+}
+
+.blog-meta {
+    margin-bottom: 20px;
+}
+
+.blog-meta i {
+    color: #6195ff;
+}
+
+.blog-meta span {
+    margin-right: 15px;
+}
+
+.blog-title {
+    margin-bottom: 20px;
+}
+
+.blog-desc {
+    color: #868f9b;
+    margin-bottom: 20px;
+}
+
+.blog-btn{
+    color: #6195ff;
+    display: block;
+}
+
+
+
+/* ==============================
+    3.12 Contact Section
+================================*/
+.contact-top {
+    margin-bottom: 80px;
+}
+
+.contact-icon-box {
+    width: 30%;
+    float: left;
+    margin: 0 1.533%;
+    text-align: center;
+}
+
+.contact-icon-box i {
+    color: #6195ff;
+    font-size: 37px;
+    margin-bottom: 15px;
+}
+
+.contact-title {
+    margin-bottom: 15px;
+    font-size: 21px;
+}
+
+.contact-desc {
+    color: #868f9b;
+}
+
+.contact-form {
+    width: 60%;
+    margin: auto;
+}
+
+.contact-form input,
+.contact-form textarea{
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 2px solid #f0f0f0;
+    background: #f7f7f7;
+    font-family: inherit;
+    font-size: 17px;
+    outline: none;
+    color: #354052;
+}
+
+::placeholder {
+    color: #ccc;
+}
+
+.contact-form input.name,
+.contact-form input.email {
+    display: inline-block;
+    width: 48%;
+}
+
+.contact-form input.email {
+    margin-left: 3%;
+}
+
+.contact-form .submit {
+    width: 200px;
+    background: #6195ff;
+    color: #f6f6f6;
+    border: none;
+    margin: auto;
+    font-size: 17px;
+    font-weight: normal;
+    border-radius: 3px;
+}
+
+
+/* ==============================
+    3.13 footer Section
+================================*/
+.footer-section {
+    background: #1C1D21;
+    text-align: center;
+    padding: 60px 0 40px;
+}
+
+.footer-social {
+    margin: 40px auto;
+}
+
+.footer-social li {
+    display: inline-block;
+}
+.footer-social li a {
+    display: block;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    background: #6195ff;
+    color: #fff;
+    margin: 0 5px;
+    line-height: 50px;
+    border-radius: 2px;
+}
+
+.copyright {
+    color: #868f9b;
+}
+
+.copyright a {
+    color: #6195ff;
+}
